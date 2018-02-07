@@ -1,0 +1,54 @@
+{% extends 'empolyee/testn.html' %}
+
+{% block body %}
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-sm-3" style="background-color:lavender;"></div>
+    <!-- <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
+    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div> -->
+  <div class="col-sm-6" style="background-color:lavender;">
+    <div class="form-group">
+    <br><br>
+   <center><h1>Payments</h1></center>
+   <form method="POST" action="payment1">
+   {% csrf_token %}
+      <div class="form-group">
+           <label>Emp_id</label>
+           <input type="text" class="form-control" name="empid">
+       </div>
+       <div class="form-group">
+           <label>Name</label>
+           <input type="text" class="form-control" name="name">
+       </div>
+       <div class="form-group">
+           <label>Department</label>
+           <input type="department"  class="form-control" name="department">
+       </div>
+       <div class="form-group">
+           <label>Mounth</label>
+           <input type="mounth"  class="form-control" name="mounth">
+       </div>
+       <div class="form-group">
+           <label>Leaves_no_days</label>
+           <input type="leaves_no_days"  class="form-control" name="leaves_no_days">
+       </div>
+       <div class="form-group">
+           <label>Actual_ctc</label>
+           <input type="actual_ctc"  class="form-control" name="actual_ctc">
+       </div>
+       <div class="form-group">
+           <label>Payble_ctc</label>
+           <input type="payble_ctc"  class="form-control" name="payble_ctc">
+       </div>
+       
+       <center><button type="submit" class="btn btn-primary">Submit</button></center><br><br>
+       
+   </form>
+ </div>
+   <div class="col-sm-3" style="background-color:lavender;"></div>
+   </div>
+</div>
+
+
+{% endblock %}

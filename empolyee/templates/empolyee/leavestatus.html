@@ -1,0 +1,58 @@
+{% extends 'empolyee/test.html' %}
+
+{% block body %}
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-sm-1" style="background-color:lavender;"></div>
+    <!-- <div class="col-sm-4" style="background-color:lavenderblush;">.col-sm-4</div>
+    <div class="col-sm-4" style="background-color:lavender;">.col-sm-4</div> -->
+  <div class="col-sm-10" style="background-color:lavender;">
+    <div class="form-group">
+    
+    <center><h1>leavestatus</h1></center></div>
+    <style>
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width:10px;
+}
+</style>
+<center><table style="width:70%">
+  <tr>
+    <th><center>ID</center></th>
+    <th><center>NAME</center></th>
+    <th><center>Department</center></th>
+    <th><center>Leave_form</center></th>
+    <th><center>Leave_To</center></th>
+    <th><center>Number_of_days</center></th>
+    <th><center>Reason</center></th>
+    <th><center>Status</center></th>
+    
+  </tr>  
+  
+    {% for employees in employees%}
+      {% if request.user.get_username == employees.em_name %}
+          <tr>
+            <td><center>{{employees.em_id}}</center></td>
+            <td><center>{{employees.em_name}}</center></td>
+            <td><center>{{employees.department}}</center></td>
+            <td><center>{{employees.leave_from}}</center></td>
+            <td><center>{{employees.leave_to}}</center></td>
+            <td><center>{{employees.no_days}}</center></td>
+            <td><center>{{employees.reason}}</center></td>
+            <td><center>{{employees.status}}</center></td>
+          </tr>  
+      {% endif %}
+  {% endfor %}
+ 
+</table></center>
+
+<br><br>
+ </div>
+   <div class="col-sm-1" style="background-color:lavender;"></div>
+   </div>
+</div>
+
+
+{% endblock %}
