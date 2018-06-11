@@ -7,18 +7,18 @@ from .utility import *
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import authenticate
 from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.views import generic
 from .forms import UserForm
 from django.views.generic import View
 
 from.models import Registers,Employees,Leaves,Payments,Users,Admins
+from django.conf.urls import url
+
 
 def index(request):
 	registers=Registers.objects.all()
-	context={
-	'registers':registers,
-	}
+	context={'registers':registers,}
 	return render(request,'empolyee/index.html',context)
 def home(request):
 	return render(request,'empolyee/home.html')
@@ -246,7 +246,7 @@ def forgot1(request):
 	users.save()
 	return render(request,'empolyee/forgot.html')
 
-#----------------------------------
+#---------------------------------------------------------------------------
 def next(request):
 	registers = Registers.objects.get(pk=register_id)
 	context={

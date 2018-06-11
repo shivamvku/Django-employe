@@ -25,22 +25,23 @@ SECRET_KEY = 'k9-vmd0+#md%nqym7)$lv+(jd7!rl^kco6!%m0(!9)p3jyndmr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['172.23.24.14']
 
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'empolyee.apps.EmpolyeeConfig',
+INSTALLED_APPS = ['django.contrib.admin',
+ 'django.contrib.auth',
+ 'django.contrib.contenttypes',
+ 'django.contrib.sessions',
+ 'django.contrib.messages',
+ 'django.contrib.staticfiles',
+ 'empolyee.apps.EmpolyeeConfig'
+ # 'rest_framework_swagger',
+
 ]
 
-MIDDLEWARE_CLASSES = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -76,10 +77,10 @@ WSGI_APPLICATION = 'emp6.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'empolyeeadb',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'emportal',
         'USER': 'postgres',
-        'PASSWORD': 'password',
+        'PASSWORD': 'vineetpsql',
         'HOST': 'localhost',
         'PORT': '5432',
     }

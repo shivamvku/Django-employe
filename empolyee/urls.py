@@ -1,7 +1,11 @@
 from django.conf.urls import url
 from.import views
+from django.conf.urls import url
+
+
 
 urlpatterns = [
+    # url(r'^docs/$', schema_view, name="schema_view"),
     url(r'^$', views.index ,name="index"),
     url(r'^(?P<register_id>[0-9]+)/$', views.detail,name='detail'),
     url(r'^next/(?P<id>\d+)$', views.next, name='next'),
